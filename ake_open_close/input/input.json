@@ -1,0 +1,7 @@
+{
+  "k" : 1e2,
+  "sigma" : 0.5,
+  "n_sigma" : 4,
+  "background_density" : 0.01,
+  "target_density" : "/home/cblau/Projects/emfit/RefinementTests/ake_open_close/scratch/target.ccp4"
+}

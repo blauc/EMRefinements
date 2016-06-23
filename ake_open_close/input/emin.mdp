@@ -1,0 +1,96 @@
+integrator               = steep
+tinit                    = 0
+nsteps                   = -1
+
+; ENERGY MINIMIZATION OPTIONS
+; Force tolerance and initial step-size
+emtol                    = 0.00001
+emstep                   = 0.001
+; Max number of iterations in relax-shells
+niter                    = 20
+; Step size (ps^2) for minimization of flexible constraints
+fcstep                   = 0
+; Frequency of steepest descents steps when doing CG
+nstcgsteep               = 1000
+nbfgscorr                = 10
+
+; OUTPUT CONTROL OPTIONS
+; Output frequency for coords (x), velocities (v) and forces (f)
+nstxout                  = 100
+nstvout                  = 100
+nstfout                  = 100
+; Output frequency for energies to log file and energy file
+nstlog                   = 100
+nstcalcenergy            = 100
+nstenergy                = 100
+; Output frequency and precision for .xtc file
+nstxout-compressed       = 100
+compressed-x-precision   = 1000
+; This selects the subset of atoms for the compressed
+; trajectory file. You can select multiple groups. By
+; default, all atoms will be written.
+compressed-x-grps        = System
+; Selection of energy groups
+energygrps               = System
+
+; NEIGHBORSEARCHING PARAMETERS
+; cut-off scheme (Verlet: particle based cut-offs, group: using charge groups)
+cutoff-scheme            = Verlet
+; nblist update frequency
+nstlist                  = 10
+; ns algorithm (simple or grid)
+ns_type                  = grid
+; Periodic boundary conditions: xyz, no, xy
+pbc                      = xyz
+periodic_molecules       = no
+; Allowed energy error due to the Verlet buffer in kJ/mol/ps per atom,
+; a value of -1 means: use rlist
+verlet-buffer-tolerance  = 0.005
+; nblist cut-off        
+rlist                    = 1.0
+; long-range cut-off for switched potentials
+
+; OPTIONS FOR ELECTROSTATICS AND VDW
+; Method for doing electrostatics
+coulombtype              = pme
+coulomb-modifier         = Potential-shift-Verlet
+rcoulomb-switch          = 0
+rcoulomb                 = 1.0
+; Relative dielectric constant for the medium and the reaction field
+epsilon-r                = 1
+epsilon_rf               = 1
+; Method for doing Van der Waals
+vdw-type                 = Cut-off
+vdw-modifier             = Potential-shift-Verlet
+; cut-off lengths       
+rvdw-switch              = 0
+rvdw                     = 1.0
+; Apply long range dispersion corrections for Energy and Pressure
+DispCorr                 = No
+; Extension of the potential lookup tables beyond the cut-off
+table-extension          = 1
+; Separate tables between energy group pairs
+energygrp-table          = 
+; Spacing for the PME/PPPM FFT grid
+fourierspacing           = 0.12
+; FFT grid size, when a value is 0 fourierspacing will be used
+fourier_nx               = 0
+fourier_ny               = 0
+fourier_nz               = 0
+; EWALD/PME/PPPM parameters
+pme_order                = 4
+ewald_rtol               = 1e-06
+ewald-rtol-lj            = 0.001
+lj-pme-comb-rule         = Geometric
+ewald_geometry           = 3d
+epsilon_surface          = 0
+
+; EXTERNAL POTENTIAL(S)
+external-potential       = yes
+; Where to look for the external potential files
+external-potential-path  = /home/cblau/Projects/emfit/RefinementTests/ake_open_close/input
+; All registered external potential types. Seperate input for multiple files by : .
+densityfitting-input     = input.json
+densityfitting-output    = 
+densityfitting-groups    = protein
+
