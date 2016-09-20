@@ -1,7 +1,11 @@
 {
-  "k" : 1e2,
-  "sigma" : 0.5,
-  "n_sigma" : 4,
+  "k" : 1e6,
+  "k_factor" : 1.001,
+  "sigma" : 0.7,
+  "n_sigma" : 5,
   "background_density" : 0.01,
-  "target_density" : "/home/cblau/Projects/emfit/RefinementTests/ake_open_close/scratch/target.ccp4"
+  "every_nth_step" : 1,
+  "target_density" : "/home/cblau/Projects/emfit/RefinementTests/ake_open_close/scratch/target.ccp4",
+  "center_to_density" : true,
+  "energy_step" : 0.1
 }

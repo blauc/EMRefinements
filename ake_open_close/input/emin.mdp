@@ -16,15 +16,15 @@ nbfgscorr                = 10
 
 ; OUTPUT CONTROL OPTIONS
 ; Output frequency for coords (x), velocities (v) and forces (f)
-nstxout                  = 100
-nstvout                  = 100
-nstfout                  = 100
+nstxout                  = 1000
+nstvout                  = 1000
+nstfout                  = 1000
 ; Output frequency for energies to log file and energy file
-nstlog                   = 100
-nstcalcenergy            = 100
-nstenergy                = 100
+nstlog                   = 1000
+nstcalcenergy            = 1000
+nstenergy                = 1000
 ; Output frequency and precision for .xtc file
-nstxout-compressed       = 100
+nstxout-compressed       = 1000
 compressed-x-precision   = 1000
 ; This selects the subset of atoms for the compressed
 ; trajectory file. You can select multiple groups. By
@@ -86,11 +86,11 @@ ewald_geometry           = 3d
 epsilon_surface          = 0
 
 ; EXTERNAL POTENTIAL(S)
-external-potential       = yes
+external-potential       = no
 ; Where to look for the external potential files
-external-potential-path  = /home/cblau/Projects/emfit/RefinementTests/ake_open_close/input
+;external-potential-path  = /home/cblau/Projects/emfit/RefinementTests/ake_open_close/input
 ; All registered external potential types. Seperate input for multiple files by : .
-densityfitting-input     = input.json
-densityfitting-output    = 
-densityfitting-groups    = protein
+;densityfitting-input     = input.json
+;densityfitting-output    = densfit_emin.dat
+;densityfitting-groups    = protein
 
